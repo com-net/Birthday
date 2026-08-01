@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mom Shop — mombirthday.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .shop-note{
+    text-align: center;
+    padding: 0 8% 7%;
+    color: var(--ink-soft);
+    font-size: clamp(0.9rem, 3.4vw, 1.05rem);
+  }
+
+  .shop-note s{
+    color: var(--pink);
+    text-decoration-thickness: 2px;
+  }
+
+  .shop-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    width: 100%;
+    padding: 0 6% 8%;
+  }
+
+  .item-card{
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 6%;
+    box-shadow: 0 3px 14px rgba(34,58,94,0.08);
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+  }
+
+  .item-card h3{
+    font-size: clamp(1.1rem, 4.4vw, 1.35rem);
+  }
+
+  .item-price{
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(1rem, 4vw, 1.15rem);
+    color: var(--blue-mid);
+  }
+
+  .item-card.unavailable .item-price{
+    color: var(--pink);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .item-card.unavailable{
+    border: 2px dashed var(--yellow);
+  }
+
+  .item-card.centered{
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  @media (min-width: 640px){
+    .item-card{ width: 47.5%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">mombirthday<span>.com</span></a>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+</header>
+
+<h1 class="page-title">Mom Shop</h1>
+<p class="shop-note">Sorry if things are a bit <s>pricey</s> princy.</p>
+
+<section class="shop-grid">
+
+  <article class="item-card">
+    <div class="pic-frame"><img src="purse.jpg" alt="Mom Purse"></div>
+    <h3>Mom Purse</h3>
+    <span class="item-price">₹8,99,999</span>
+  </article>
+
+  <article class="item-card">
+    <div class="pic-frame"><img src="shirt.jpg" alt="Mom Shirt"></div>
+    <h3>Mom Shirt</h3>
+    <span class="item-price">₹2,49,999</span>
+  </article>
+
+  <article class="item-card">
+    <div class="pic-frame"><img src="pendant.jpg" alt="Mom Pendant"></div>
+    <h3>Mom Pendant</h3>
+    <span class="item-price">₹2,00,000</span>
+  </article>
+
+  <article class="item-card">
+    <div class="pic-frame"><img src="shades.jpg" alt="Mom Shades"></div>
+    <h3>Mom Shades</h3>
+    <span class="item-price">₹1,82,999</span>
+  </article>
+
+  <article class="item-card unavailable centered">
+    <div class="pic-frame"><img src="fruit.jpg" alt="Mom Airport Fruits"></div>
+    <h3>Mom Airport Fruits</h3>
+    <span class="item-price">Not for sale, will be opened soon.</span>
+  </article>
+
+</section>
+
+<footer class="site-footer">
+  By Avi Jain
+</footer>
+
+</body>
+</html>
