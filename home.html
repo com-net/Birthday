@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Reasons — mombirthday.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .reasons-hero{
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2%;
+  }
+
+  .reasons-hero .blob{
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  .reasons-hero .blob.b1{
+    width: 34%; aspect-ratio: 1/1;
+    background: var(--pink-soft);
+    top: -8%; left: -10%;
+  }
+
+  .reasons-hero .blob.b2{
+    width: 30%; aspect-ratio: 1/1;
+    background: var(--yellow-soft);
+    top: -6%; right: -8%;
+  }
+
+  .reasons-hero > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow-tag{
+    display: block;
+    width: fit-content;
+    margin: 8% auto 0;
+    background: var(--white);
+    border: 1px solid var(--blue-soft);
+    color: var(--blue-mid);
+    font-size: clamp(0.7rem, 2.8vw, 0.82rem);
+    font-weight: 700;
+    padding: 1.6% 5%;
+    border-radius: 999px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .reasons-hero .page-title{
+    padding-top: 3%;
+    padding-bottom: 2%;
+  }
+
+  .reasons-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    width: 100%;
+    padding: 2% 6% 6%;
+  }
+
+  .reason-card{
+    position: relative;
+    width: 48%;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 9% 6% 7%;
+    box-shadow: 0 3px 14px rgba(34,58,94,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    margin-bottom: 4%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: cardIn 0.5s ease both;
+  }
+
+  .reason-card:hover,
+  .reason-card:focus-within{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(34,58,94,0.16);
+  }
+
+  .reason-card:nth-child(1){ animation-delay: 0.02s; }
+  .reason-card:nth-child(2){ animation-delay: 0.06s; }
+  .reason-card:nth-child(3){ animation-delay: 0.10s; }
+  .reason-card:nth-child(4){ animation-delay: 0.14s; }
+  .reason-card:nth-child(5){ animation-delay: 0.18s; }
+  .reason-card:nth-child(6){ animation-delay: 0.22s; }
+  .reason-card:nth-child(7){ animation-delay: 0.26s; }
+  .reason-card:nth-child(8){ animation-delay: 0.30s; }
+  .reason-card:nth-child(9){ animation-delay: 0.34s; }
+  .reason-card:nth-child(10){ animation-delay: 0.38s; }
+  .reason-card:nth-child(11){ animation-delay: 0.42s; }
+  .reason-card:nth-child(12){ animation-delay: 0.46s; }
+  .reason-card:nth-child(13){ animation-delay: 0.50s; }
+  .reason-card:nth-child(14){ animation-delay: 0.54s; }
+
+  @keyframes cardIn{
+    from{ opacity: 0; transform: translateY(14px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .reason-card::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 8%;
+    width: 30%;
+    height: 6px;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .reason-card:nth-child(3n+1)::before{ background: var(--blue-mid); }
+  .reason-card:nth-child(3n+2)::before{ background: var(--pink); }
+  .reason-card:nth-child(3n)::before{ background: var(--yellow); }
+
+  .reason-num{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 3.6vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1;
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--blue-soft);
+  }
+
+  .reason-card:nth-child(3n+2) .reason-num{
+    background: var(--pink-soft);
+    color: #9c4d6c;
+    box-shadow: 0 0 0 1px var(--pink-soft);
+  }
+
+  .reason-card:nth-child(3n) .reason-num{
+    background: var(--yellow-soft);
+    color: #8a6812;
+    box-shadow: 0 0 0 1px var(--yellow-soft);
+  }
+
+  .reason-card p{
+    font-size: clamp(0.85rem, 3.4vw, 0.98rem);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .reason-card .pic-placeholder,
+  .reason-card .pic-frame{
+    order: -1;
+  }
+
+  /* reason 15 — big finale card */
+  .reason-finale{
+    position: relative;
+    width: 100%;
+    margin: 2% 6% 10%;
+    background: linear-gradient(155deg, var(--blue-deep) 0%, #17273f 100%);
+    border-radius: var(--radius-lg);
+    padding: 9% 7% 9%;
+    color: var(--white);
+    text-align: center;
+    box-shadow: 0 14px 34px rgba(23,39,63,0.35);
+    overflow: hidden;
+  }
+
+  .reason-finale::before{
+    content: "”";
+    position: absolute;
+    top: -4%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 26vw, 9rem);
+    color: rgba(240,194,78,0.14);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .reason-finale .reason-num{
+    position: relative;
+    background: var(--yellow);
+    color: var(--blue-deep);
+    width: 3.2em;
+    height: 3.2em;
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+
+  .reason-finale h2{
+    position: relative;
+    color: var(--white);
+    font-size: clamp(1.5rem, 6.5vw, 2.2rem);
+    margin: 4% 0 3%;
+  }
+
+  .reason-finale > p{
+    position: relative;
+    color: var(--blue-soft);
+    max-width: 34ch;
+    margin: 0 auto;
+  }
+
+  .finale-pics{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4%;
+    margin-top: 8%;
+  }
+
+  .finale-pics .pic-placeholder{
+    width: 28%;
+    aspect-ratio: 1 / 1;
+    background: rgba(255,255,255,0.08);
+    border-color: var(--yellow);
+    color: var(--yellow-soft);
+  }
+
+  .finale-pics .pic-frame{
+    width: 28%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    border: 3px solid var(--white);
+  }
+
+  .finale-pics .pic-frame:nth-child(1){ transform: rotate(-4deg); }
+  .finale-pics .pic-frame:nth-child(2){ transform: rotate(2deg); margin-top: -2%; }
+  .finale-pics .pic-frame:nth-child(3){ transform: rotate(-2deg); }
+
+  @media (min-width: 640px){
+    .reason-card{ width: 30.6%; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reason-card{ animation: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">mombirthday<span>.com</span></a>
+  <nav>
+    <a href="gallery.html">Gallery</a>
+    <a href="shop.html">Mom Shop</a>
+  </nav>
+</header>
+
+<div class="reasons-hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <span class="eyebrow-tag">Straight from the heart</span>
+  <h1 class="page-title">15 Reasons You're the Best Mom</h1>
+  <p class="page-subtitle">In no particular order. Okay, maybe a little bit of order.</p>
+</div>
+
+<section class="reasons-grid">
+
+  <article class="reason-card">
+    <span class="reason-num">01</span>
+    <p>You're my mom. (Just kidding. Or not. 😀)</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">02</span>
+    <p>You're really sweet.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">03</span>
+    <p>You know what we want before we even know it ourselves.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">04</span>
+    <div class="pic-frame"><img src="sky.jpg" alt="Reason 4"></div>
+    <p>You do a bunch of stuff only for us, stuff you wouldn't otherwise do.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">05</span>
+    <p>You make amazing food.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">06</span>
+    <p>You know how to do things better than most experts do at that thing.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">07</span>
+    <div class="pic-frame"><img src="earl.jpg" alt="Reason 7"></div>
+    <p>You're our biggest supporter.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">08</span>
+    <p>You make everything so much more fun.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">09</span>
+    <p>You're always happy in front of us.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">10</span>
+    <p>You scream at us sometimes, but it's all love. (We hope. 🫣)</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">11</span>
+    <p>You protect us, always.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">12</span>
+    <p>You make sure everyone gets what they want, so we're all happy.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">13</span>
+    <p>You chose a really good dad.</p>
+  </article>
+
+  <article class="reason-card">
+    <span class="reason-num">14</span>
+    <p>You really, truly care about us.</p>
+  </article>
+
+</section>
+
+<article class="reason-finale wrap">
+  <span class="reason-num">15</span>
+  <h2>You love us.</h2>
+  <p>And honestly, that's the reason behind every other reason on this page.</p>
+  <div class="finale-pics">
+    <div class="pic-frame"><img src="abc.jpg" alt="Reason 15, picture 1"></div>
+    <div class="pic-frame"><img src="def.jpg" alt="Reason 15, picture 2"></div>
+    <div class="pic-frame"><img src="ghi.jpg" alt="Reason 15, picture 3"></div>
+  </div>
+</article>
+
+<footer class="site-footer">
+  Made with love, for the best mom. By Avi Jain
+</footer>
+
+</body>
+</html>

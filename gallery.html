@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — mombirthday.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .gallery-intro{
+    padding-bottom: 3%;
+  }
+
+  .gallery-track{
+    width: 100%;
+    height: 72vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  .gallery-item{
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .gallery-item:nth-child(odd){ background: var(--blue-soft); }
+  .gallery-item:nth-child(3n){ background: var(--pink-soft); }
+
+  .frame{
+    width: 74%;
+    max-width: 420px;
+    aspect-ratio: 4 / 5;
+    max-height: 68%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 12px 34px rgba(34,58,94,0.18);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+  }
+
+  .gallery-item.active .frame{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .frame-tag{
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blue-deep);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 1.5% 5%;
+    border-radius: 999px;
+    z-index: 5;
+    letter-spacing: 0.03em;
+  }
+
+  .scroll-hint{
+    text-align: center;
+    padding: 3% 6% 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .frame{ transition: none; transform: scale(1); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">mombirthday<span>.com</span></a>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="shop.html">Mom Shop</a>
+  </nav>
+</header>
+
+<h1 class="page-title">The Gallery</h1>
+<p class="page-subtitle gallery-intro">Twenty-one moments. Scroll for the next one.</p>
+
+<div class="gallery-track" id="galleryTrack">
+
+  <div class="gallery-item"><div class="frame"><img src="one.jpg" alt="Picture 1"></div><span class="frame-tag">1 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="two.jpg" alt="Picture 2"></div><span class="frame-tag">2 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="three.jpg" alt="Picture 3"></div><span class="frame-tag">3 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="four.jpg" alt="Picture 4"></div><span class="frame-tag">4 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="five.jpg" alt="Picture 5"></div><span class="frame-tag">5 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="six.jpg" alt="Picture 6"></div><span class="frame-tag">6 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="seven.jpg" alt="Picture 7"></div><span class="frame-tag">7 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="eight.jpg" alt="Picture 8"></div><span class="frame-tag">8 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="nine.jpg" alt="Picture 9"></div><span class="frame-tag">9 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="ten.jpg" alt="Picture 10"></div><span class="frame-tag">10 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="eleven.jpg" alt="Picture 11"></div><span class="frame-tag">11 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="twelve.jpg" alt="Picture 12"></div><span class="frame-tag">12 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="thirteen.jpg" alt="Picture 13"></div><span class="frame-tag">13 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="fourteen.jpg" alt="Picture 14"></div><span class="frame-tag">14 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="fifteen.jpg" alt="Picture 15"></div><span class="frame-tag">15 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="sixteen.jpg" alt="Picture 16"></div><span class="frame-tag">16 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="seventeen.jpg" alt="Picture 17"></div><span class="frame-tag">17 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="eighteen.jpg" alt="Picture 18"></div><span class="frame-tag">18 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="nineteen.jpg" alt="Picture 19"></div><span class="frame-tag">19 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="twenty.jpg" alt="Picture 20"></div><span class="frame-tag">20 / 21</span></div>
+  <div class="gallery-item"><div class="frame"><img src="twentyone.jpg" alt="Picture 21"></div><span class="frame-tag">21 / 21</span></div>
+
+</div>
+
+<p class="scroll-hint">↑ scroll or swipe inside the frame above ↑</p>
+
+<footer class="site-footer">
+  By Avi Jain
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
